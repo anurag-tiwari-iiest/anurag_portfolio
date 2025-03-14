@@ -72,6 +72,8 @@ const Hero = () => {
   return (
     <section id="hero" ref={containerRef} className="w-screen h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 overflow-hidden m-0">
       {/* Profile Image */}
+      <br></br>
+      <br></br>
       <img
         ref={imageRef}
         src={myPic}
@@ -111,7 +113,7 @@ const Hero = () => {
           href="https://github.com/anurag-tiwari-iiest"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-300 transition flex items-center gap-2"
+          className="px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-white transition flex items-center gap-2"
         >
           <FaGithub size={24} />
           GitHub
@@ -120,13 +122,13 @@ const Hero = () => {
           href="https://www.linkedin.com/in/anurag-tiwari-84ab3623b"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 transition flex items-center gap-2"
+          className="px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-white transition flex items-center gap-2"
         >
           <FaLinkedin size={24} />
           LinkedIn
         </a>
       </div>
-
+        
       {/* Resume Link */}
       <div className="mt-4">
         <a
@@ -138,7 +140,8 @@ const Hero = () => {
           Resume <FaExternalLinkAlt />
         </a>
       </div>
-
+        <br></br>
+        <br></br>
       {/* Scroll Down Text and Arrow */}
       <p className="text-white text-lg mt-12 cursor-pointer" onClick={handleScrollToAbout}>
         Scroll to know more about me <FaArrowDown className="ml-2 animate-bounce inline-block" />

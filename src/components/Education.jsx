@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import { Tilt } from 'react-tilt';
+import Tilt from "react-parallax-tilt";
 import Confetti from 'react-confetti';
 import { gsap } from "gsap";
 
@@ -62,7 +62,7 @@ const Education = () => {
         <div className="absolute left-[30%] w-1 bg-gradient-to-b from-yellow-400 to-orange-600 h-full timeline-line"></div>
 
         {educationData.map((edu, index) => (
-          <Tilt key={index} options={{ max: 15, scale: 1.05 }}>
+            <Tilt key={index} tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.05}>
             <div 
               className="flex items-start mb-20 relative bg-white shadow-lg rounded-lg p-6 transition-transform hover:scale-105 hover:shadow-2xl" 
               data-aos="fade-up" 
