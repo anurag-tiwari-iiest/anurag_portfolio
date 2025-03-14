@@ -99,7 +99,7 @@ const Hero = () => {
 
       {/* Name */}
       <h2 className="text-4xl font-bold text-white mt-4">
-        Hi, I'm Anurag Tiwari
+        Hi, I'm Anurag
       </h2>
 
       {/* Short Bio */}
