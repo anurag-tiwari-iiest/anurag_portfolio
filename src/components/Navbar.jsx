@@ -15,24 +15,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleScrollImageSize = () => {
-      const image = document.querySelector(".navbar-image");
-      if (image) {
-        if (window.scrollY > 0) {
-          image.style.width = "10rem"; // w-40 (unchanged)
-          image.style.height = "3rem"; // h-12
-        } else {
-          image.style.width = "10rem"; // w-40
-          image.style.height = "5rem"; // h-20
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScrollImageSize);
-    return () => window.removeEventListener("scroll", handleScrollImageSize);
-  }, []);
-
   const handleSmoothScroll = (section) => {
     const target = document.getElementById(section);
     if (target) {
@@ -50,7 +32,7 @@ const Navbar = () => {
       <nav
         ref={navbarRef}
         className={`fixed top-0 left-0 w-full z-50 p-4 ${scrolling ? "bg-black shadow-lg" : "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"}`}
-        style={{ height: "5rem" }} // Explicit height so content below doesn't overlap
+        style={{ height: "4rem" }} // Fixed navbar height
       >
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6">
           {/* Name / Image */}
@@ -59,12 +41,12 @@ const Navbar = () => {
               <img
                 src="src/assets/anurag_name.png"
                 alt="Anurag"
-                className="navbar-image w-40 h-20 transition-all duration-200 hover:scale-105 drop-shadow-glow filter"
+                className="w-36 h-12 transition-all duration-200 hover:scale-105 drop-shadow-glow filter" // Fixed size
                 onClick={() => handleSmoothScroll("hero")}
                 onError={() => setImageLoaded(false)}
               />
             ) : (
-              <h1 className="text-white text-3xl font-bold uppercase">ANURAG</h1>
+              <h1 className="text-white text-4xl font-bold uppercase">ANURAG</h1>
             )}
           </div>
 
@@ -91,7 +73,7 @@ const Navbar = () => {
       </nav>
 
       {/* Spacer to prevent content overlap */}
-      <div style={{ height: "5rem" }}></div>
+      <div style={{ height: "4rem" }}></div> 
 
       {/* Mobile Menu */}
       {menuOpen && (

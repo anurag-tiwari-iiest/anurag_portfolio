@@ -63,7 +63,8 @@ const Education = () => {
         {educationData.map((edu, index) => (
           <div 
             key={index}
-            className="flex items-start mb-20 relative bg-white shadow-lg rounded-lg p-6 transition-transform hover:scale-105 hover:shadow-2xl" 
+            className="flex items-start mb-20 relative bg-white shadow-lg rounded-lg p-6 
+                         transition-transform hover:scale-105 hover:shadow-2xl hover:bg-gray-100"
             data-aos="fade-up" 
             data-aos-delay={`${index * 200}`}
             onMouseEnter={() => setShowConfetti(true)}
