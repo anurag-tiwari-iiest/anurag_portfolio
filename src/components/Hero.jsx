@@ -130,7 +130,7 @@ const Hero = () => {
       {/* Resume Link */}
       <div className="mt-4">
         <a
-          href="https://google.com"
+          href="https://yahoo.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl text-white font-semibold hover:underline flex items-center gap-2 hover:text-black"
