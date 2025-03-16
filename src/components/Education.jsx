@@ -46,10 +46,11 @@ const Education = () => {
   return (
     <section 
       id="education" 
-      className="w-screen h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900 py-8 px-6 relative overflow-hidden font-[Poppins]"
+      className="w-screen min-h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900 py-8 px-6 relative overflow-hidden font-[Poppins]"
     >
       {/* Section Title */}
-      <div className="md:px-24">      <h2 
+      <div className="md:px-24">      
+      <h2 
         className="text-5xl font-bold text-left mb-16 border-b-4 border-yellow-400 pb-2  inline-block" 
         data-aos="fade-up"
       >
