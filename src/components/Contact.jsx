@@ -16,15 +16,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="w-screen h-screen bg-black text-white flex flex-col justify-center items-center text-center px-6 md:px-10 lg:px-20 font-sans">
-      {/* Name & Role */}
-      <h1 className="text-5xl md:text-7xl font-bold mb-3">Anurag Vinod Tiwari</h1> <br></br>
+      <h1 className="text-5xl md:text-7xl font-bold mb-3">Anurag Vinod Tiwari</h1> <br />
       <p className="text-xl md:text-2xl text-gray-400">Software Development Engineer</p>
       <p className="text-lg md:text-xl text-gray-400 mt-2 flex items-center justify-center">
         <FaMapMarkerAlt className="mr-2 text-yellow-400" />
         Nagpur (MH), India
       </p>
 
-      {/* Contact Details */}
       <div className="mt-8 space-y-5">
         <div className="flex items-center justify-center space-x-4 text-xl">
           <motion.span
@@ -49,7 +47,6 @@ const Contact = () => {
           <span className="text-gray-300">{phone}</span>
         </div>
         
-        {/* Social Links - Doubled Size */}
         <div className="flex justify-center space-x-8 text-6xl mt-6">
           <a
             href="https://github.com/anurag-tiwari-iiest"
@@ -69,11 +66,10 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
 
-      {/* Footer - Fixed at a specific bottom position */}
       <motion.p 
         className="bottom-10 text-sm text-gray-500 flex items-center space-x-1"
         initial={{ opacity: 0 }} 

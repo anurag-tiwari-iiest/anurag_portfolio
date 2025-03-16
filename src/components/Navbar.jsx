@@ -19,7 +19,7 @@ const Navbar = () => {
     const target = document.getElementById(section);
     if (target) {
       window.scrollTo({
-        top: target.offsetTop - (navbarRef.current?.offsetHeight || 80), // Adjust for navbar height
+        top: target.offsetTop - (navbarRef.current?.offsetHeight || 80),
         behavior: "smooth",
       });
     }
@@ -28,14 +28,12 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Fixed Navbar */}
       <nav
         ref={navbarRef}
         className={`fixed top-0 left-0 w-full z-50 p-4 ${scrolling ? "bg-black shadow-lg" : "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"}`}
         style={{ height: "4rem" }}
       >
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6">
-          {/* Name / Image */}
           <div className="cursor-pointer flex items-center">
             {imageLoaded ? (
               <img
@@ -50,7 +48,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Navigation Links */}
           <ul className="hidden md:flex space-x-6 text-white">
             {["About", "Education", "Projects", "Experience", "Contact"].map((item, index) => (
               <li
@@ -63,7 +60,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Hamburger Menu */}
           <div className="md:hidden flex items-center">
             <p onClick={() => setMenuOpen(!menuOpen)} className="text-white">
               <FaBars size={24} />
@@ -72,10 +68,8 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Spacer to prevent content overlap */}
       <div style={{ height: "4rem" }}></div> 
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-end">
           <div className="w-1/2 h-3/4 bg-black bg-opacity-80 flex flex-col items-center space-y-6 py-8 rounded-l-lg">
