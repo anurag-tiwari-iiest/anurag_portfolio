@@ -71,7 +71,7 @@ const Navbar = () => {
       <div style={{ height: "4rem" }}></div> 
 
       {menuOpen && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-end">
+        <div className="md:hidden fixed top-16 left-0 w-full bg-black bg-opacity-0 flex justify-end z-50">
           <div className="w-1/2 h-3/4 bg-black bg-opacity-80 flex flex-col items-center space-y-6 py-8 rounded-l-lg">
             {["About", "Education", "Projects", "Experience", "Contact"].map((item, index) => (
               <p
