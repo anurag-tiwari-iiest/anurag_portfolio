@@ -33,7 +33,7 @@ const Education = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 300, once: false });
+    AOS.init({ duration: 300, once: false, offset: 50 });
 
     // GSAP Timeline Fill Animation
     gsap.fromTo(
@@ -46,25 +46,26 @@ const Education = () => {
   return (
     <section 
       id="education" 
-      className="w-screen min-h-screen bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 text-gray-900 py-24 px-10 relative overflow-hidden font-[Poppins]"
+      className="w-screen h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900 py-8 px-6 relative overflow-hidden font-[Poppins]"
     >
       {/* Section Title */}
-      <h2 
-        className="text-5xl font-bold border-b-4 border-yellow-500 pb-2 text-center mb-20 tracking-wide" 
+      <div className="md:px-24">      <h2 
+        className="text-5xl font-bold text-left mb-16 border-b-4 border-yellow-400 pb-2  inline-block" 
         data-aos="fade-up"
       >
         Education
       </h2>
-
-      <div className="max-w-5xl mx-auto relative">
+      </div>
+      <div className="max-w-5xl mx-auto relative flex flex-col justify-center">
         {/* Vertical Timeline Line */}
-        <div className="absolute left-[30%] w-1 bg-gradient-to-b from-yellow-400 to-orange-600 h-full timeline-line"></div>
+        <div className="absolute left-[30%] w-1 bg-gradient-to-b from-yellow-400 to-orange-600 h-[80%] before:bg-inherit"></div>
 
         {educationData.map((edu, index) => (
           <div 
             key={index}
-            className="flex items-start mb-20 relative bg-white shadow-lg rounded-lg p-6 
-                         transition-transform hover:scale-105 hover:shadow-2xl hover:bg-gray-100"
+            className="flex items-start mb-12 relative bg-white shadow-lg rounded-lg p-6
+                       transition-all duration-300 ease-in-out transform hover:scale-[1.05] 
+                       hover:bg-yellow-400 hover:shadow-2xl hover:text-gray-900 will-change-transform"
             data-aos="fade-up" 
             data-aos-delay={`${index * 200}`}
             onMouseEnter={() => setShowConfetti(true)}
@@ -72,16 +73,16 @@ const Education = () => {
           >
             {/* Year on Left Side */}
             <div className="w-[30%] text-right pr-8">
-              <p className="text-gray-500 text-lg font-semibold">{edu.year}</p>
+              <p className="text-gray-500 text-xl font-semibold">{edu.year}</p>
             </div>
 
             {/* Education Details on Right Side */}
             <div className="w-[70%] pl-8">
-              <h3 className="text-2xl font-semibold font-[Montserrat] flex items-center">
+              <h3 className="text-2xl font-semibold flex items-center">
                 <span className="mr-2">{edu.icon}</span> {edu.degree}
               </h3>
-              <p className="text-gray-700 text-lg">{edu.institution}</p>
-              <p className="text-gray-600 mt-3 italic text-base">{edu.details}</p>
+              <p className="text-gray-800 text-lg">{edu.institution}</p>
+              <p className="text-gray-700 mt-3 italic text-base">{edu.details}</p>
             </div>
           </div>
         ))}

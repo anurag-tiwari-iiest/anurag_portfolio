@@ -32,7 +32,7 @@ const Navbar = () => {
       <nav
         ref={navbarRef}
         className={`fixed top-0 left-0 w-full z-50 p-4 ${scrolling ? "bg-black shadow-lg" : "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"}`}
-        style={{ height: "4rem" }} // Fixed navbar height
+        style={{ height: "4rem" }}
       >
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6">
           {/* Name / Image */}
@@ -41,7 +41,7 @@ const Navbar = () => {
               <img
                 src="src/assets/anurag_name.png"
                 alt="Anurag"
-                className="w-36 h-12 transition-all duration-200 hover:scale-105 drop-shadow-glow filter" // Fixed size
+                className="w-36 h-12 transition-all duration-200 hover:scale-105 drop-shadow-glow filter"
                 onClick={() => handleSmoothScroll("hero")}
                 onError={() => setImageLoaded(false)}
               />

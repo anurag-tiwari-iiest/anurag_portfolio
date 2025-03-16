@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { FaGithub, FaLinkedin, FaArrowDown, FaExternalLinkAlt } from "react-icons/fa";
-import myPic from "../assets/my_pic.png"; // Import your image
+import myPic from "../assets/my_pic.png";
 
 const Hero = () => {
   const [showWelcome, setShowWelcome] = useState(false);
@@ -8,7 +8,7 @@ const Hero = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => setShowWelcome(true), 500); // Delay effect
+    setTimeout(() => setShowWelcome(true), 500);
 
     const handleMouseMove = (event) => {
       const image = imageRef.current;
@@ -23,7 +23,7 @@ const Hero = () => {
       const imageY = image.offsetTop + image.offsetHeight / 2;
       const distance = Math.sqrt((mouseX - imageX) ** 2 + (mouseY - imageY) ** 2);
 
-      if (distance < 150) { // Adjust this value to control the "run away" effect
+      if (distance < 200) {
         const angle = Math.atan2(mouseY - imageY, mouseX - imageX);
         const moveX = Math.cos(angle) * -100;
         const moveY = Math.sin(angle) * -100;
@@ -72,7 +72,6 @@ const Hero = () => {
   return (
     <section id="hero" ref={containerRef} className="w-screen h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 overflow-hidden m-0">
       {/* Profile Image */}
-      <br></br>
       <br></br>
       <img
         ref={imageRef}
@@ -140,8 +139,6 @@ const Hero = () => {
           Resume <FaExternalLinkAlt />
         </a>
       </div>
-        <br></br>
-        <br></br>
       {/* Scroll Down Text and Arrow */}
       <p className="text-white text-lg mt-12 cursor-pointer" onClick={handleScrollToAbout}>
         Scroll to know more about me <FaArrowDown className="ml-2 animate-bounce inline-block" />

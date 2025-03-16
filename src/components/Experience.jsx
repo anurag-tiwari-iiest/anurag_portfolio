@@ -13,7 +13,7 @@ const Experience = () => {
   return (
     <section 
       id="experience" 
-      className="w-screen min-h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-800 py-20 px-8 md:px-16"
+      className="w-screen h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-800 py-8 px-12 md:px-16"
     >
       {/* Section Title */}
       <h2 
