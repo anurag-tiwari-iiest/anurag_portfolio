@@ -20,7 +20,7 @@ const Contact = () => {
       <p className="text-xl md:text-2xl text-gray-400">Software Development Engineer</p>
       <p className="text-lg md:text-xl text-gray-400 mt-2 flex items-center justify-center">
         <FaMapMarkerAlt className="mr-2 text-yellow-400" />
-        Nagpur (MH), India
+        Hyderabad, India
       </p>
 
       <div className="mt-8 space-y-5">
@@ -82,7 +82,7 @@ const Contact = () => {
         >
           <FaHeart className="text-red-500" />
         </motion.span>
-        <span>by Anurag Vinod Tiwari</span>
+        <span> by Anurag Vinod Tiwari</span>
       </motion.p>
     </section>
   );

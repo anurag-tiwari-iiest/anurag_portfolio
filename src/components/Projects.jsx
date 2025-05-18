@@ -11,7 +11,7 @@ import pic5 from '../assets/project_pics/pic_5.png';
 const projectsData = [
   {
   title: "Disappearing Tic-Tac-Toe (Real-time Multiplayer Game)",
-  description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system.",
+  description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system or play against our AI (using Minimax algorithm).",
   tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker(Created image for deployment)",
   image: pic5,
   appLink: "https://twoplayer-ttt-timer.onrender.com",

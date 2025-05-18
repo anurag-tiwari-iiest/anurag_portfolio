@@ -136,7 +136,7 @@ const Hero = () => {
         </a>
       </div>
 
-      <p className="text-white text-lg mt-12 cursor-pointer" onClick={handleScrollToAbout}>
+      <p className="text-white text-lg mt-8 cursor-pointer" onClick={handleScrollToAbout}>
         Scroll to know more about me <FaArrowDown className="ml-2 animate-bounce inline-block" />
       </p>
     </section>
