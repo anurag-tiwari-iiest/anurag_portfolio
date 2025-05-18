@@ -6,8 +6,18 @@ import pic1 from '../assets/project_pics/pic_1.png';
 import pic2 from '../assets/project_pics/pic_2.png';
 import pic3 from '../assets/project_pics/pic_3.png';
 import pic4 from '../assets/project_pics/pic_4.png';
+import pic5 from '../assets/project_pics/pic_5.png';
 
 const projectsData = [
+  {
+  title: "Disappearing Tic-Tac-Toe (Real-time Multiplayer Game)",
+  description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system.",
+  tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker",
+  image: pic2,
+  appLink: "https://twoplayer-ttt-timer.onrender.com",
+  codeLink: "https://github.com/anurag-tiwari-iiest/2player-ttt-timer",
+  visitText: "Play Game"
+  },
   {
     title: "Virtual Plant Care Assistant (with AI-powered chatbot)",
     description: "A web application that provides plant care recommendations based on weather and species, along with an AI-powered chatbot for queries.",
