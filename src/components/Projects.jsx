@@ -12,8 +12,8 @@ const projectsData = [
   {
   title: "Disappearing Tic-Tac-Toe (Real-time Multiplayer Game)",
   description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system.",
-  tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker",
-  image: pic2,
+  tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker(Created image for deployment)",
+  image: pic5,
   appLink: "https://twoplayer-ttt-timer.onrender.com",
   codeLink: "https://github.com/anurag-tiwari-iiest/2player-ttt-timer",
   visitText: "Play Game"
@@ -48,7 +48,7 @@ const projectsData = [
   {
     title: "Interactive and Responsive Portfolio Website",
     description: "A fully responsive and interactive personal portfolio website built using React, Tailwind CSS, AOS, and Vite for optimized performance.",
-    tech: "React, Tailwind CSS, AOS",
+    tech: "React (Vite), Tailwind CSS, AOS",
     image: pic2,
     appLink: "https://anurag-portfolio-vert.vercel.app/",
     codeLink: "https://github.com/anurag-tiwari-iiest/anurag_portfolio",
@@ -66,7 +66,7 @@ const Projects = () => {
       id="projects" 
       className="w-screen min-h-screen bg-gradient-to-r from-gray-950 via-gray-900 to-black text-white py-10 px-8 font-sans"
     >
-      <div className="md:px-24">
+      <div className="md:px-12">
         <h2 
           className="text-5xl font-bold border-b-4 border-yellow-400 pb-2 text-center mb-16 tracking-wide inline-block"
           data-aos="fade-up"
@@ -75,7 +75,7 @@ const Projects = () => {
         </h2>
       </div>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-20">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
         {projectsData.map((project, index) => (
           <div
             key={index}
