@@ -127,7 +127,7 @@ const Hero = () => {
 
       <div className="mt-4">
         <a
-          href="https://drive.google.com/file/d/1KMLvnlNK6sgrwRc-l4d4An9Mxdtj87YH/view?usp=sharing"
+          href="https://drive.google.com/file/d/1QludFzGybJ6fxBpqPBK1lIGll4heAjcr/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl text-white font-semibold hover:underline flex items-center gap-2 hover:text-black"
