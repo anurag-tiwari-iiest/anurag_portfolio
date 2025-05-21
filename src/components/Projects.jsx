@@ -14,7 +14,7 @@ const projectsData = [
   description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system or play against our AI (using Minimax algorithm).",
   tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker(Created image for deployment)",
   image: pic5,
-  appLink: "https://twoplayer-ttt-timer.onrender.com",
+  appLink: "https://twoplayer-ttt-timer-1.onrender.com/",
   codeLink: "https://github.com/anurag-tiwari-iiest/2player-ttt-timer",
   visitText: "Play Game"
   },
