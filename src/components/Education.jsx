@@ -44,46 +44,87 @@ const Education = () => {
   return (
     <section 
       id="education" 
-      className="w-screen min-h-screen bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900 py-8 px-6 relative overflow-hidden font-[Poppins]"
+      className="w-screen min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-100 text-gray-900 py-16 px-6 relative overflow-hidden font-[Poppins] flex flex-col"
     >
-      <div className="md:px-24">      
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_50%,_rgba(251,146,60,0.3)_0%,transparent_50%)]"></div>
+      
+      <div className="md:px-24 relative z-10">      
         <h2 
-          className="text-5xl font-bold text-left mb-16 border-b-4 border-yellow-400 pb-2 inline-block" 
+          className="text-5xl font-bold text-left mb-12 pb-2" 
           data-aos="fade-up"
         >
-          Education
+          <span className="border-b-4 border-orange-500 inline-block">Education</span>
         </h2>
       </div>
 
-      <div className="max-w-5xl mx-auto relative flex flex-col justify-center">
-        <div className="absolute left-[30%] w-1 bg-gradient-to-b from-yellow-400 to-orange-600 h-[80%] before:bg-inherit"></div>
+      <div className="max-w-7xl mx-auto relative flex flex-col justify-center flex-1 px-4">
+        {/* Vertical Timeline Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-400 via-pink-400 to-purple-500 hidden md:block"></div>
 
         {educationData.map((edu, index) => (
           <div 
             key={index}
-            className="flex items-start mb-12 relative bg-white shadow-lg rounded-lg p-6
-                       transition-all duration-300 ease-in-out transform hover:scale-[1.05] 
-                       hover:bg-yellow-400 hover:shadow-2xl hover:text-gray-900 will-change-transform"
-            data-aos="fade-up" 
-            data-aos-delay={`${index * 200}`}
-            onMouseEnter={() => setShowConfetti(true)}
-            onMouseLeave={() => setShowConfetti(false)}
+            className="relative mb-16 flex items-center"
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            data-aos-delay={index * 100}
           >
-            <div className="w-[30%] text-right pr-8">
-              <p className="text-gray-500 text-xl font-semibold">{edu.year}</p>
+            {/* Timeline Dot */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block z-20">
+              <div 
+                className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 border-4 border-white shadow-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+                onMouseEnter={() => setShowConfetti(true)}
+                onMouseLeave={() => setShowConfetti(false)}
+              ></div>
             </div>
 
-            <div className="w-[70%] pl-8">
-              <h3 className="text-2xl font-semibold flex items-center">
-                <span className="mr-2">{edu.icon}</span> {edu.degree}
-              </h3>
-              <p className="text-gray-800 text-lg">{edu.institution}</p>
-              <p className="text-gray-700 mt-3 italic text-base">{edu.details}</p>
+            {/* Year Badge - Left side for even, Right for odd */}
+            <div className={`absolute ${index % 2 === 0 ? 'left-0 md:right-1/2 md:mr-12' : 'right-0 md:left-1/2 md:ml-12'} w-full md:w-auto hidden md:block`}>
+              <div 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full font-bold text-xl shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+                onMouseEnter={() => setShowConfetti(true)}
+                onMouseLeave={() => setShowConfetti(false)}
+              >
+                <span className="text-3xl">{edu.icon}</span>
+                <span>{edu.year}</span>
+              </div>
+            </div>
+
+            {/* Content Card - Right side for even, Left for odd */}
+            <div 
+              className={`w-full ${index % 2 === 0 ? 'md:ml-auto md:pl-16' : 'md:mr-auto md:pr-16'} md:w-[58%] group`}
+              onMouseEnter={() => setShowConfetti(true)}
+              onMouseLeave={() => setShowConfetti(false)}
+            >
+              <div className="bg-white rounded-2xl shadow-xl p-6 transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 hover:rotate-1 border-2 border-transparent hover:border-orange-400 relative overflow-hidden">
+                {/* Animated Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-pink-100/50 to-purple-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  {/* Mobile Year Badge */}
+                  <div className="md:hidden inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full font-bold text-lg mb-4 shadow-md">
+                    <span className="text-2xl">{edu.icon}</span>
+                    <span>{edu.year}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-3 font-medium">
+                    {edu.institution}
+                  </p>
+                  <p className="text-base text-orange-600 font-bold bg-orange-50 inline-block px-4 py-2 rounded-lg">
+                    {edu.details}
+                  </p>
+                </div>
+
+                {/* Decorative Corner Element */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-200 to-orange-300 opacity-20 rounded-bl-full group-hover:scale-150 transition-transform duration-500"></div>
+              </div>
             </div>
           </div>
         ))}
 
-        {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} numberOfPieces={50} />}
+        {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} numberOfPieces={100} recycle={false} gravity={0.3} />}
       </div>
     </section>
   );

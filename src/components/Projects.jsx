@@ -7,16 +7,28 @@ import pic2 from '../assets/project_pics/pic_2.png';
 import pic3 from '../assets/project_pics/pic_3.png';
 import pic4 from '../assets/project_pics/pic_4.png';
 import pic5 from '../assets/project_pics/pic_5.png';
+import boxmaster from '../assets/project_pics/boxmaster.png';
 
 const projectsData = [
   {
-  title: "Disappearing Tic-Tac-Toe (Real-time Multiplayer Game)",
-  description: "A twist on classic Tic-Tac-Toe with disappearing moves! Only the latest 3 moves stay active. Includes real-time online multiplayer via lobby system or play against our AI (using Minimax algorithm).",
-  tech: "JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker(Created image for deployment)",
-  image: pic5,
-  appLink: "https://twoplayer-ttt-timer-1.onrender.com/",
-  codeLink: "https://github.com/anurag-tiwari-iiest/2player-ttt-timer",
-  visitText: "Play Game"
+    title: "BoxMaster (Dots & Boxes Strategy Game)",
+    description: "A polished mobile version of the classic Dots & Boxes strategy game where players compete to capture boxes by completing edges on the grid. Features smooth touch controls, intelligent turn handling, score tracking, and a visually engaging UI for a competitive experience.",
+    tech: "Kotlin, Android Studio, Android SDK, Custom UI Components, Canvas Drawing, Game State Management",
+    image: boxmaster,
+    appLink: "https://play.google.com/store/apps/details?id=com.yoink.dotsandboxes",
+    visitText: "Play on Android",
+    hideCode: true
+  },
+  {
+    title: "CrazyToe (Real-time Multiplayer Game)",
+    description: "A unique twist on classic Tic-Tac-Toe where only the latest three moves remain visible, adding a strategic memory challenge. Supports real-time multiplayer with dynamic room/lobby creation, synchronized gameplay, and timer-based turn handling via WebSocket. Includes a Minimax-powered AI opponent with seamless gameplay across both web and Android platforms.",
+    tech: "Kotlin, Android Studio, Android SDK, JavaScript, Node.js, Socket.IO, HTML, CSS, DOM API, Docker",
+    image: pic5,
+    androidLink: "https://twoplayer-ttt-timer-1.onrender.com/",
+    appLink: "https://play.google.com/store/apps/details?id=com.anuragtiwari.crazytoe",
+    codeLink: "https://github.com/anurag-tiwari-iiest/2player-ttt-timer",
+    visitText: "Play on Android",
+    hasAndroid: true
   },
   {
     title: "Virtual Plant Care Assistant (with AI-powered chatbot)",
@@ -68,51 +80,96 @@ const Projects = () => {
     >
       <div className="md:px-12">
         <h2 
-          className="text-5xl font-bold border-b-4 border-yellow-400 pb-2 text-center mb-16 tracking-wide inline-block"
+          className="text-5xl font-bold pb-2 text-left mb-16 tracking-wide"
           data-aos="fade-up"
         >
-          Projects
+          <span className="border-b-4 border-yellow-400 inline-block">Projects</span>
         </h2>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 auto-rows-fr">
         {projectsData.map((project, index) => (
           <div
             key={index}
-            className="bg-[#252525] text-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-2xl hover:bg-[#333333]"
+            className="group perspective-1000"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <div className="relative overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-              />
-            </div>
+            <div className="bg-[#252525] text-white rounded-lg shadow-lg overflow-hidden transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-3 group-hover:scale-110 group-hover:shadow-[0_25px_70px_rgba(250,204,21,0.6)] group-hover:bg-[#333333] group-hover:z-10 flex flex-col h-full">
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
 
-            <div className="p-6 flex flex-col gap-4">
-              <h3 className="text-2xl font-semibold text-yellow-400">{project.title}</h3>
-              <p className="text-[#d1d1d1] text-sm">{project.description}</p>
-              <p className="text-yellow-500 text-sm italic">{project.tech}</p>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-2xl font-semibold text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">{project.title}</h3>
+                <p className="text-[#d1d1d1] text-sm mt-3 flex-1">{project.description}</p>
+                <p className="text-yellow-500 text-sm italic mt-3">{project.tech}</p>
 
-              <div className="flex gap-4 mt-auto">
-                <a
-                  href={project.appLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-200 hover:scale-105 hover:bg-black hover:text-white"
-                >
-                  {project.visitText} <FaExternalLinkAlt size={14} />
-                </a>
-                <a
-                  href={project.codeLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-200 hover:scale-105 hover:bg-black hover:text-white"
-                >
-                  See Code <FaGithub size={18} />
-                </a>
+                <div className={`flex flex-col gap-3 mt-6`}>
+                  {project.hideCode ? (
+                    <a
+                      href={project.appLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black"
+                    >
+                      {project.visitText} <FaExternalLinkAlt size={14} />
+                    </a>
+                  ) : project.hasAndroid ? (
+                    <>
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black"
+                      >
+                        See Code <FaGithub size={18} />
+                      </a>
+                      <div className="flex gap-3">
+                        <a
+                          href={project.androidLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black whitespace-nowrap text-sm"
+                        >
+                          Play on Web <FaExternalLinkAlt size={14} />
+                        </a>
+                        <a
+                          href={project.appLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black whitespace-nowrap text-sm"
+                        >
+                          {project.visitText} <FaExternalLinkAlt size={14} />
+                        </a>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="flex gap-3">
+                      <a
+                        href={project.appLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black whitespace-nowrap text-sm"
+                      >
+                        {project.visitText} <FaExternalLinkAlt size={14} />
+                      </a>
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-black font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:text-black whitespace-nowrap text-sm"
+                      >
+                        See Code <FaGithub size={18} />
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
